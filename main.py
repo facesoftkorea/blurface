@@ -5,6 +5,19 @@ from tempfile import NamedTemporaryFile
 # 모자이크 처리 함수 임포트
 from mosaic import mosaic_video
 
+hide_streamlit_style = """
+            <style>
+            [data-testid="stToolbar"] {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+footer="<style> your css code put here</style><div class='footer'><p>the word you want to tell<a style='display:block;text-align:center;' href='https://www.streamlit.io' target='_blank'>your email address put here</a></p></div>"
+
+st.markdown(footer, unsafe_allow_html=True)
+
 # 폴더 생성
 OUTPUT_FOLDER = "./outputs"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
